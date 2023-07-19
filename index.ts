@@ -23,7 +23,6 @@ export {
 
 function dbHttpStatus(err: DBError, use409?: boolean): DbHttpStatus {
   if (err instanceof UniqueViolationError
-    || err instanceof ConstraintViolationError
     || err instanceof ForeignKeyViolationError
   ) {
     const status_code = use409 ? 409: 403;
