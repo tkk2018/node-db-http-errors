@@ -8,8 +8,10 @@ import {
 } from "db-errors";
 import httpstatus from "http-status";
 
+export type HttpStatusCode = Extract<keyof typeof httpstatus, number>;
+
 interface DbHttpStatus {
-  status_code: number;
+  status_code: HttpStatusCode;
   status_message: string;
   db_error: DBError;
 };
